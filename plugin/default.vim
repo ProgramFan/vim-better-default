@@ -1,6 +1,7 @@
 " default.vim - Better vim than the default
 " Maintainer:   Liu-Cheng Xu <https://github.com/liuchengxu>
-" Version:      1.0
+" Maintainer:   Yang-Zhang <https://github.com/ProgramFan>
+" Version:      1.1
 " vim: et ts=2 sts=2 sw=2
 
 scriptencoding utf-8
@@ -148,7 +149,7 @@ set background=dark         " Assume dark background
 set cursorline              " Highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
-set relativenumber          " Relative numbers on
+set norelativenumber        " Relative numbers off
 set fillchars=vert:│,stl:\ ,stlnc:\ 
 
 " Annoying temporary files
