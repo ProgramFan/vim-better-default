@@ -75,9 +75,7 @@ set t_ut=
 
 set winminheight=0
 set wildmode=list:longest,full
-
 set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶
-
 set whichwrap+=<,>,h,l  " Allow backspace and cursor keys to cross line boundaries
 
 set termencoding=utf-8
@@ -146,7 +144,7 @@ if !exists('g:vim_better_default_enable_folding') ||
 endif
 
 set background=dark         " Assume dark background
-set cursorline              " Highlight current line
+set nocursorline            " Not highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
 set norelativenumber        " Relative numbers off
@@ -176,22 +174,12 @@ if exists('g:vim_better_default_persistent_undo') && g:vim_better_default_persis
   endif
 endif
 
-if has('gui_running')
-  set guioptions-=r        " Hide the right scrollbar
-  set guioptions-=L        " Hide the left scrollbar
-  set guioptions-=T
-  set guioptions-=e
-  set shortmess+=c
-  " No annoying sound on errors
-  set noerrorbells
-  set novisualbell
-  set visualbell t_vb=
-endif
 
 " Key (re)Mappings {
 
   if !exists('g:vim_better_default_key_mapping') ||
         \ g:vim_better_default_key_mapping
+    let g:mapleader="\<Space>" " Use space as the leader key as in space-vim
 
     " Basic {
       if !exists('g:vim_better_default_basic_key_mapping') ||
