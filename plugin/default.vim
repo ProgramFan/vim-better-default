@@ -47,7 +47,6 @@ set ignorecase     " Case insensitive search
 set smartcase      " ... but case sensitive when uc present
 set scrolljump=5   " Line to scroll when cursor leaves screen
 set scrolloff=3    " Minumum lines to keep above and below cursor
-set nowrap         " Do not wrap long lines
 set shiftwidth=4   " Use indents of 4 spaces
 set tabstop=4      " An indentation every four columns
 set softtabstop=4  " Let backspace delete indent
@@ -76,7 +75,6 @@ set t_ut=
 set winminheight=0
 set wildmode=list:longest,full
 set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶
-set whichwrap+=<,>,h,l  " Allow backspace and cursor keys to cross line boundaries
 
 set termencoding=utf-8
 set fileencoding=utf-8
@@ -114,11 +112,6 @@ command! W w !sudo tee % > /dev/null
     let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
   endif
-
-  " inside neovim
-  if has('nvim')
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
-  endif
 " }
 
 if exists('g:vim_better_default_minimum') && g:vim_better_default_minimum
@@ -144,7 +137,6 @@ if !exists('g:vim_better_default_enable_folding') ||
 endif
 
 set background=dark         " Assume dark background
-set nocursorline            " Not highlight current line
 set fileformats=unix,dos,mac        " Use Unix as the standard file type
 set number                  " Line numbers on
 set norelativenumber        " Relative numbers off
